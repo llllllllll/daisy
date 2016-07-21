@@ -16,7 +16,7 @@ def ltree_to_dask(node):
     Parameters
     ----------
     node : LTree
-        The node to convert into a tree.
+        The node to convert into a dask graph.
 
     Returns
     -------
@@ -142,7 +142,9 @@ class autodaskthunk(thunk):
     ----------
     func : callable
         The code for the closure.
-    *args, **kwargs
+    *args : iterable[any]
+        The free variables.
+    **kwargs : dict[str, any]
         The free variables.
     """
     _get = dask.get
