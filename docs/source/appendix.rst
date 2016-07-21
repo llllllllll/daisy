@@ -1,8 +1,8 @@
 API Reference
-=============
+-------------
 
 Main
-----
+~~~~
 
 .. autofunction:: daisy.autodask(func, *, inline)
 
@@ -12,7 +12,7 @@ Main
 
 
 Miscellaneous
--------------
+~~~~~~~~~~~~~
 
 .. autoclass:: daisy.autodaskthunk
 
