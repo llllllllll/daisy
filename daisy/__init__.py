@@ -105,7 +105,7 @@ class inline(strict):
            else:
                return x - 1
 
-    *Iterating over the input with a ``for`` loop*
+    *Iterating over the input with a for loop*
 
     .. code-block:: python
 
@@ -177,7 +177,7 @@ _inline = inline  # alias because ``inline`` is shadowed below
 
 @curry
 def autodask(func, *, inline):
-    """Mark that a function should lazily build up a call graph to send to be
+    """Mark that a function should lazily build up a call graph to be
     executed by dask.
 
     Parameters
@@ -280,7 +280,7 @@ def autodask(func, *, inline):
     This shows that we will not duplicate the work needed to add compute
     ``f(a, b)`` twice.
 
-    **When it is unsafe to pass ``inline=True``**
+    **When it is unsafe to pass inline=True**
 
     There is no default for ``inline`` because it is a very important decision!
     On the one hand, we almost *always* want to pass ``inline=True``; however,
@@ -303,7 +303,7 @@ def autodask(func, *, inline):
            else:
                return x - 1
 
-    *Iterating over the input with a ``for`` loop*
+    *Iterating over the input with a for loop*
 
     .. code-block:: python
 
@@ -320,7 +320,7 @@ def autodask(func, *, inline):
        def f(x):
            return strict(x)
 
-    **Differences with :func:`dask.delayed`**
+    **Differences with dask.delayed**
 
     *Lazy by default vs eager by default*
 
