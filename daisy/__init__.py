@@ -284,7 +284,8 @@ def autodask(func, *, inline):
 
     There is no default for ``inline`` because it is a very important decision!
     On the one hand, we almost *always* want to pass ``inline=True``; however,
-    when we cannot pass that we will silently get much worse performance.
+    there are cases when inlining is not possible, and attempting to do so will
+    give much worse performance.
 
     Functions cannot be inlined into the graph if they are strict on their
     inputs. This means that to return a final defered computation they must
@@ -373,7 +374,7 @@ def autodask(func, *, inline):
 
     .. code-block:: python
 
-       @autodask
+       @autodask(inline=True)
        def f(a, b):
            return a is b
 
